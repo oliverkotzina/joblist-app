@@ -4,19 +4,31 @@ Java 25 CLI app that processes Hops (`.hop`) files in the current directory: for
 
 ## Prerequisites
 
-Java 25+, [zb](https://github.com/AdamBien/zb)
+Java 25+ (installed as `java25` via [windows-java25-installer](https://github.com/oliverkotzina/windows-java25-installer) on Windows), [zb](https://github.com/AdamBien/zb)
+
+## Install as global `joblist` command (Windows)
+
+```
+install.cmd
+```
+
+Then from any directory with `.hop` files:
+
+```
+joblist
+```
 
 ## Build and Run
 
 ```
 zb
-java -jar zbo/app.jar
+java25 -jar zbo/app.jar
 ```
 
 Or launch directly from source:
 
 ```
-java src/main/java/App.java
+java25 src/main/java/App.java
 ```
 
 ## Tests

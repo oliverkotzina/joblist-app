@@ -10,15 +10,15 @@ if not exist "%APP_SOURCE%" (
     exit /b 1
 )
 
-where java >nul 2>&1
+where java25 >nul 2>&1
 if errorlevel 1 (
-    echo ERROR: 'java' not on PATH.
+    echo ERROR: 'java25' not on PATH.
     echo Run https://github.com/oliverkotzina/windows-java25-installer first.
     exit /b 1
 )
 
-for /f "tokens=2 delims= " %%V in ('java -version 2^>^&1 ^| findstr /i "version"') do set "JAVA_VERSION=%%~V"
-echo Using Java !JAVA_VERSION!
+for /f "tokens=2 delims= " %%V in ('java25 -version 2^>^&1 ^| findstr /i "version"') do set "JAVA_VERSION=%%~V"
+echo Using java25 !JAVA_VERSION!
 
 set "INSTALL_DIR=%LOCALAPPDATA%\joblist"
 set "WRAPPER=%INSTALL_DIR%\joblist.cmd"
@@ -27,7 +27,7 @@ if not exist "%INSTALL_DIR%" mkdir "%INSTALL_DIR%"
 
 (
     echo @echo off
-    echo java "!APP_SOURCE!" %%*
+    echo java25 "!APP_SOURCE!" %%*
 ) > "%WRAPPER%"
 
 echo Wrote "%WRAPPER%"
