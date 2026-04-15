@@ -12,11 +12,21 @@ Java 25+ (installed as `java25` via [windows-java25-installer](https://github.co
 install.cmd
 ```
 
+If `java25` is not yet on PATH, `install.cmd` prompts to run the [windows-java25-installer](https://github.com/oliverkotzina/windows-java25-installer) for you. Running `install.cmd` a second time is safe — it cleans `%LOCALAPPDATA%\joblist` and rewrites the wrapper from scratch, and only touches the user PATH if needed (no duplicates).
+
 Then from any directory with `.hop` files:
 
 ```
 joblist
 ```
+
+### Uninstall
+
+```
+uninstall.cmd
+```
+
+Removes `%LOCALAPPDATA%\joblist` and strips it from the user PATH.
 
 ## Build and Run
 
